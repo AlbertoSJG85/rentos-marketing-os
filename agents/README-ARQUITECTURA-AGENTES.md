@@ -15,25 +15,31 @@ El Director NO escribe copy, NO tira código, NO hace vídeos. El Director lee l
 4. Actualiza el `ROADMAP.md` ubicado en `/00_control/`.
 
 ## 2. Agente de Copy & Conversión
-**Responsabilidad principal:** Mensaje, agresividad comercial y jerarquía de información.
+**Responsabilidad principal:** Mensaje, agresividad comercial y jerarquía de información orientada a conversión.
 
 **Rol:** Un híbrido entre Copywriter de respuesta directa y Product Marketing. Escribe para agitar dolores (huéspedes pesados, móviles que no paran, limpiezas que se cruzan).
-Documentos que usa: `/01_contexto_canonico/`. Entrega en `/04_growth_copy/`.
+El norte es el embudo: *ver demo -> entrar al piloto -> onboarding -> activación.* No enfocar primariamente a GlorIA, eso aporta valor, pero el objetivo comercial es el piloto de la herramienta. 
+Usa `/01_contexto_canonico/`. Entrega en `/04_growth_copy/`.
 
 ## 3. Agente de Producto (UX + Frontend)
 **Responsabilidad principal:** Traducir discurso a experiencia digital.
 
-**Rol (Fusión de Diseño e Implementación):** En entornos ágiles con IA, el que diseña a menudo prototipa directamente en código (React, Tailwind, etc.). Este agente toma el esquema de copy y las guías visuales (`/02_branding/`) y fabrica la interfaz. Su métrica clave: que el diseño no parezca barato, que respire "NexOS" (seriedad corporativa, pero moderna), que sea dinámico. 
+**Rol (Fusión de Diseño e Implementación):** Este agente toma el esquema de copy y las guías visuales (`/02_branding/`) y fabrica la interfaz. Ojo, su obsesión no es rehacer tecnología por rehacerla: si hay que tunear la landing en HTML base, se tunea ahí. Si se justifica refactor o react, se plantea, pero la prioridad absoluta es lanzar con alto standard y optimizar conversiones.
 Entrega en `/03_landing/`.
 
 ## 4. Agente de Storytelling Visual (Videos y Ads)
 **Responsabilidad principal:** Impacto visual fuera del terreno web. Scripts para UGC, Ads, Demos.
 
-**Rol:** En vez de un editor de vídeo puro, es el director de la pieza. Define qué pantallazo de RentOS sale exacto en el segundo 3. Define el guion de voz en off (alineado con el Agente de Copy). 
+**Rol:** No edita vídeo, pero dirige su guion y planos. Define qué pantallazo de RentOS sale exacto en el segundo 3. Define el guion de voz en off (alineado con el Agente de Copy). 
 Usa `/01_contexto_canonico/` y `/02_branding/`. Entrega en `/04_growth_copy/`.
 
-## 5. Agente de QA, Tracking & Coherencia
-**Responsabilidad principal:** Reducción de fugas. Si el copy es bueno y el diseño bonito, pero el botón de reserva falla, todo es cero.
+## 5. Agente de QA & Tracking (Especialista Marketing)
+**Responsabilidad principal:** Reducción de fugas en el embudo puramente de ventas/marketing.
 
-**Rol:** Revisor exhaustivo. Plantea qué eventos enviar (Pixel Meta, analítica de botones). Prueba casos límite en la landing ("¿Qué pasa si entra desde un iPhone XS?"). 
+**Rol:** Revisor exhaustivo del repositorio de MKT. Funciones base:
+- Coherencia de Claims vs Contexto.
+- Validar planes de medición, GTM y tracking de eventos (Meta, Google, Analytics).
+- Control de formularios, CTAs cortados, diseño en móvil roto.
+- Fugas de embudo (por qué alguien pincha y no deja mail para el piloto).
+*IMPORTANTE:* No se mete en Bugs técnicos del backend o QA profundo de la aplicación final (Nexos API). Solo de este embudo de adquisición.
 Entrega en `/05_qa_tracking/` (Checklists y manuales de taggeo).

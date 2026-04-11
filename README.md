@@ -9,17 +9,18 @@ Este repositorio actúa como el sistema nervioso, central de control y hub opera
 1. **RentOS no se comunica con perfil bajo.** Tono ambicioso, comercial y con autoridad.
 2. **Cero "SaaS genérico".** RentOS es la salida real al caos. Resuelve la carga operativa, dependencia del móvil, cuadrantes de limpieza, persecución diaria de huéspedes, etc.
 3. **Pilar de autoridad:** _RentOS by NexOS._
+4. **Funnel Core actual:** Orientado puramente a conversión: Ver demo -> Entrar al piloto -> Onboarding -> Activación. (GlorIA es un valor añadido brutal, pero no el núcleo del embudo ahora mismo).
 
 ## Arquitectura de Carpetas
 
-* **/00_control/**: Cerebro y gobierno. Roadmaps, estado de sprints y archivos canónicos de control de flujo. (Donde opera el Agente Director).
-* **/01_contexto_canonico/**: La Biblia. Archivos de lectura obligatoria con reglas de tono, audiencias y contexto inamovibles (salvo pivote formal).
+* **/00_control/**: Cerebro y gobierno. Roadmaps, decisiones tomadas, estado actual. (Donde opera el Agente Director).
+* **/01_contexto_canonico/**: La Biblia. Archivos de lectura obligatoria con reglas de tono, audiencias y contexto inamovibles.
 * **/02_branding/**: Sistema visual, logos, paletas, exportaciones de assets. (Entrada/Salida para Agente de UX/UI).
-* **/03_landing/**: Repositorio del Frontend. Código fuente de landings, componentes, etc. (React/Vite o el stack elegido).
+* **/03_landing/**: Repositorio de la Landing web (o tuneos sobre la actual CMS/código existente). No forzamos un stack (React/Vite) si no es estrictamente necesario, la prioridad es que convierta ya.
 * **/04_growth_copy/**: Entregables puros de venta. Guiones de vídeo, ángulos de ads, copies web duros, secuencias de email.
-* **/05_qa_tracking/**: Plan de medición (GTM, Pixel), auditorías, checklists de fugas de producto y pruebas funcionales.
-* **/06_sprints/**: Registros formales del trabajo semanal. Cada "push" o iteración termina aquí documentado: qué se hizo, qué falta, bloqueos.
-* **/agents/**: Directorio con los `system_prompts` (.md) de cada agente especializado para invocarlo en nuevas sesiones manteniendo el carácter exacto.
+* **/05_qa_tracking/**: Exclusivo para Marketing: Auditoría de claims, coherencia de tonos, plan de medición, GTM, eventos de formulario y detección de fugas de embudo.
+* **/06_sprints/**: Registros formales del trabajo iterativo.
+* **/agents/**: Directorio con los `system_prompts` (.md) de cada agente.
 
 ## Protocolo de Trabajo por Agentes
 
