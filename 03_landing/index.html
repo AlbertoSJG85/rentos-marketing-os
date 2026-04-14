@@ -746,7 +746,7 @@
             gap: 4rem;
         }
         
-        .hero-watermark { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; background-image: url('img/logo-rentos.png'); background-size: 50%; background-repeat: no-repeat; background-position: center; opacity: 0.12; z-index: 0; pointer-events: none; transform: translate(-50%, -50%); }
+        .hero-watermark { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; background-image: url('img/logo-rentos.png'); background-size: 50%; background-repeat: no-repeat; background-position: center; opacity: 0.12; mix-blend-mode: multiply; filter: grayscale(100%); z-index: 0; pointer-events: none; transform: translate(-50%, -50%); }
         
         .hero-content {
             flex: 1;
@@ -857,21 +857,7 @@
 <body>
     <header class="landing-header">
         <div style="display: flex; flex-direction: column; justify-content: center;" class="header-logo-container">
-            <a href="/">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" style="height: 100%; width: auto; min-width: 150px; display: block; object-fit: contain;">
-  <defs>
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#381A5D" />
-      <stop offset="100%" stop-color="#8A4BDE" />
-    </linearGradient>
-  </defs>
-  <!-- Símbolo: Casa isométrica/Diamante Operativo -->
-  <path d="M 40 20 L 75 40 L 75 80 L 40 100 L 5 80 L 5 40 Z" fill="url(#brandGrad)" />
-  <circle cx="40" cy="60" r="12" fill="#FFFFFF" opacity="0.9" />
-  <!-- Texto RentOS -->
-  <text x="110" y="82" font-family="-apple-system, sans-serif" font-weight="900" font-size="70" letter-spacing="-3px" fill="#0F172A">Rent<tspan fill="#8A4BDE">OS</tspan></text>
-</svg>
-</a>
+            <a href="/"><img src="img/logo-rentos.png" alt="RentOS Logo" style="height: 80px; display: block; object-fit: contain; mix-blend-mode: multiply; filter: contrast(1.1);"></a>
             <span style="color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; margin-top: -6px; font-size: 0.85rem; padding-left: 2px;">by NexOS</span>
         </div>
         <nav class="landing-nav">
