@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentOS — El Sistema Operativo Definitivo para Alquileres Vacacionales</title>
+    <meta name="description" content="RentOS erradica el caos operativo. Deja de ser esclavo de tu alquiler vacacional y recupera el control absoluto de tu tiempo.">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4A2574">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        :root {
+            --primary: #381A5D;
+            --accent: #8A4BDE;
+            --accent-glow: rgba(138, 75, 222, 0.4);
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --bg-light: #F8FAFC;
+            --bg-dark: #0F172A;
+            --border: #E2E8F0;
+            --success: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: var(--text-main);
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Nav */
+        .landing-header {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .landing-logo {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.05em;
+        }
+
+        .landing-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .landing-nav a:not(.btn-primary) {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-main);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+            background: var(--bg-light);
+        }
+
+        .btn-dark {
+            background: var(--bg-dark);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .btn-dark:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            background: #1e293b;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(138, 75, 222, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--bg-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Dolor / Agitación */
+        .pain-section {
+            background: var(--bg-dark);
+            color: white;
+            padding: 7rem 2rem;
+            position: relative;
+        }
+
+        .pain-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pain-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .pain-header h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .pain-header p {
+            font-size: 1.25rem;
+            color: #94A3B8;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pain-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .pain-card h3 {
+            color: #F87171;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .pain-card p {
+            color: #CBD5E1;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Transformación */
+        .transformation-section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .transform-content h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--bg-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .transform-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0 0;
+        }
+
+        .transform-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .transform-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .visual-box {
+            background: var(--bg-light);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .visual-box .status-pill {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-left: 4px solid var(--success);
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .visual-box .status-pill strong {
+            font-size: 1.15rem;
+            color: var(--bg-dark);
+        }
+        .visual-box .status-pill span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Comparativa (RentOS vs Hacerlo a mano con PMS) */
+        .comparison-section {
+            background: var(--bg-light);
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .comp-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comp-container h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .comp-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .comp-col {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+        }
+
+        .comp-col.rentos {
+            border: 2px solid var(--accent);
+            box-shadow: 0 15px 40px var(--accent-glow);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .comp-col h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comp-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comp-col ul li {
+            margin-bottom: 1.25rem;
+            font-size: 1.1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .comp-col.old ul li::before {
+            content: "✕";
+            color: var(--danger);
+            font-weight: bold;
+        }
+
+        .comp-col.rentos ul li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* GlorIA Section */
+        .gloria-section {
+            padding: 8rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .gloria-text h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .gloria-text p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .gloria-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #8A4BDE, #381A5D);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 900;
+            box-shadow: 0 10px 30px var(--accent-glow);
+            flex-shrink: 0;
+        }
+
+        /* Demo Central */
+        .demo-cta-section {
+            background: linear-gradient(135deg, var(--bg-dark), var(--primary));
+            color: white;
+            padding: 7rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .demo-cta-container h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .demo-cta-container p {
+            font-size: 1.35rem;
+            opacity: 0.9;
+            margin-bottom: 3rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 8rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--bg-dark);
+        }
+
+        .faq-item p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: var(--bg-light);
+            padding: 8rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            padding: 3rem;
+            text-align: center;
+            background: white;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .transform-grid, .comp-table, .gloria-section {
+                grid-template-columns: 1fr;
+                flex-direction: column;
+            }
+            .comp-col.rentos {
+                transform: scale(1);
+            }
+            .hero h1 { font-size: 2.8rem; }
+            .demo-cta-container h2 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="landing-header">
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <a href="/" class="landing-logo">RentOS</a>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">by NexOS</span>
+        </div>
+        <nav class="landing-nav">
+            <a href="/login.html">Acceso Clientes</a>
+            <a href="#piloto" id="nav-demo-btn" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 1rem;">Quiero entrar al Piloto</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO (Ambición Subida con Vídeo de Tensión) -->
+        <section class="hero" style="position: relative; overflow: hidden;">
+            <!-- Placeholder Vídeo Tensión Hero -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: #000; opacity: 0.6;">
+                <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.4;">
+                    <source src="img/hero-tension-placeholder.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div style="position: relative; z-index: 1;">
+                <span class="hero-badge" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">El Sistema Operativo para Gestores Reales</span>
+                <h1 style="color: #ffffff;">Tu negocio no debería depender de que mires <span style="color: var(--accent); text-shadow: 0 0 15px var(--accent-glow);">WhatsApp cada 5 minutos</span>.</h1>
+                <p style="color: #cbd5e1;">Tu PMS sirve para que entren reservas. RentOS sirve para que esas reservas no te secuestren el día. Frenamos el caos de WhatsApp y los problemas de coordinación de limpieza para que la operativa fluya sin que tengas que estar siempre conectado.</p>
+                <div class="hero-actions">
+                    <a href="#piloto" id="hero-pilot-btn" class="btn btn-primary">Quiero entrar al Piloto</a>
+                    <a href="/demo/" id="hero-demo-btn" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.3);">Ver cómo funciona por dentro</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE DOLOR (Agitación Fuerte) -->
+        <section class="pain-section">
+            <div class="pain-container">
+                <div class="pain-header">
+                    <h2>La trampa de "hacerlo todo tú"</h2>
+                    <p>Estar agotado no es sinónimo de que el negocio crezca. Es señal de que el sistema falla.</p>
+                </div>
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <h3>El infierno de los grupos diarios</h3>
+                        <p>Crear un grupo distinto intentando cuadrar a qué hora sale un huésped y cuándo entra el equipo de limpieza. Un fallo humano y todo explota.</p>
+                    </div>
+                    <div class="pain-card">
+                        <h3>La vigilancia perpetua</h3>
+                        <p>Despertarte sábado por la mañana cruzando los dedos para que el wifi del apartamento 3 funcione y el huésped despistado haya entendido cómo abrir la puerta exterior.</p>
+                    </div>
+                    <div class="pain-card">
+                        <h3>El embudo de tu propio tiempo</h3>
+                        <p>No puedes meter un apartamento más porque ya no te da la vida para perseguir limpiadoras ni atender urgencias a medianoche. Has tocado techo manual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE TRANSFORMACIÓN: Antes/Después Agresivo con Vídeo de Alivio -->
+        <section class="transformation-section">
+            <div class="transform-grid">
+                <div class="visual-box" style="padding: 0; overflow: hidden; border: none; background: #000;">
+                    <!-- Placeholder Vídeo Alivio / Supervisión -->
+                    <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; display: block; opacity: 0.9;">
+                        <source src="img/transformacion-alivio-placeholder.mp4" type="video/mp4">
+                    </video>
+                    <!-- Superposición sutil de UI para transmitir control -->
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; right: 1rem;">
+                        <div class="status-pill" style="margin-bottom: 0.5rem; padding: 1rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);">
+                            <strong>Equipo sincronizado en silencio</strong>
+                            <span>La limpieza ya sabe qué hacer y a qué hora.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="transform-content">
+                    <h2>Deja de perseguir.<br>Empieza a dominar.</h2>
+                    <p style="color: var(--text-muted); font-size: 1.25rem;">Deja de desgastarte en el seguimiento operativo de cada reserva. RentOS organiza a tu equipo de limpieza y canaliza las dudas de tus huéspedes para amortiguar la fricción diaria.</p>
+                    <ul class="transform-list">
+                        <li><strong>Orquestación efectiva:</strong> El seguimiento diario se dispara solo hacia quien debe ejecutarlo.</li>
+                        <li><strong>Soporte oxigenado:</strong> La comunicación base se canaliza, liberando horas de tu tiempo.</li>
+                        <li><strong>Control sin asfixia:</strong> Recupera la seguridad mental de saber que las cosas ocurren aunque no mires la pantalla.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARATIVA INTELIGENTE FRENTE A PMS -->
+        <section class="comparison-section">
+            <div class="comp-container">
+                <h2>¿No choca esto con mi actual PMS?</h2>
+                <p style="font-size: 1.25rem; color: var(--text-muted);">Tu PMS es excelente ordenando reservas en un calendario. Pero la gestión física no ocurre en la pantalla, ocurre en el apartamento.</p>
+                
+                <div class="comp-table">
+                    <div class="comp-col old">
+                        <h3>Solo con el PMS</h3>
+                        <ul>
+                            <li>Tienes el calendario sincronizado.</li>
+                            <li>Avisas a mano a limpieza de los cambios e imprevistos.</li>
+                            <li>Tiras de memoria y papel para acordarte de las averías.</li>
+                            <li>Respondes tú a todas las dudas de llegada.</li>
+                        </ul>
+                    </div>
+                    <div class="comp-col rentos">
+                        <h3 style="color: var(--accent);">Con la capa RentOS</h3>
+                        <ul>
+                            <li>Tu PMS te sigue dando las reservas intactas.</li>
+                            <li>RentOS coordina los pases de limpieza con la llegada real.</li>
+                            <li><strong>Se rompe un aire acondicionado; RentOS canaliza la incidencia y evita que te obligue a saltar de urgencia.</strong></li>
+                            <li><strong>Trabajas para escalar tu negocio, no apagando pequeños fuegos diarios.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE GLORIA -->
+        <section class="gloria-section">
+            <div class="gloria-avatar">Gl</div>
+            <div class="gloria-text">
+                <h2>Tu primera línea de defensa para el huésped.</h2>
+                <p>Tu tiempo es demasiado caro para seguir explicando por WhatsApp en qué cajón de la cocina están las bolsas de basura. GlorIA asume las preguntas repetitivas y las dudas de acceso; <strong>y tú te centras directamente en hacer crecer el negocio.</strong></p>
+            </div>
+        </section>
+
+        <!-- DEMO CENTRAL -->
+        <section class="demo-cta-section" id="demo">
+            <div class="demo-cta-container">
+                <h2>Siente el peso que te quitas de encima</h2>
+                <p>Las promesas de software sobran. Entra a la demo interactiva y comprueba en primera persona cómo RentOS despliega la operativa real que echabas en falta.</p>
+                <a href="#piloto" id="mid-demo-btn" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1.25rem 2.5rem; color: var(--bg-dark); border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Acceder al Programa Piloto</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2>Respuestas claras y directas</h2>
+            
+            <div class="faq-item">
+                <h4>¿Tengo que tirar mi actual PMS a la basura?</h4>
+                <p>En absoluto. RentOS encaja aunque ya uses PMS. Nosotros no competimos por pintarte de colores un calendario de Airbnb; entramos en la parte operativa diaria (limpieza, coordinación, GlorIA) donde tu software actual todavía te obliga a usar WhatsApp y memoria.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>¿GlorIA resultará un estorbo para el huésped?</h4>
+                <p>Todo lo contrario. GlorIA ayuda a descargar parte de las fricciones precisamente porque opera como una capa conversacional ágil y fluida, reduciendo esperas para el viajero y carga mental para ti.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>¿Realmente voy a poder soltar el móvil?</h4>
+                <p>Ese es nuestro único objetivo comercial. RentOS no hace magias irreales, solo orquesta avisos, seguimientos y comunicación operativa para romper tu dependencia absoluta del minuto a minuto del negocio.</p>
+            </div>
+        </section>
+
+        <!-- Cierre CTA -->
+        <section class="footer-cta">
+            <h2>¿Listo para subir de nivel y soltar el caos?</h2>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">Únete a RentOS. El oxígeno que tu gestión diaria necesitaba desesperadamente.</p>
+            <div class="hero-actions">
+                <a href="#piloto" id="footer-pilot-btn" class="btn btn-primary">Quiero entrar al Piloto</a>
+                <a href="/demo/" id="footer-demo-btn" class="btn btn-dark">Ver cómo funciona por dentro</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; RentOS, un sistema de NexOS. Ingeniería de Paz Operativa para Gestores.</p>
+    </footer>
+</body>
+</html>
