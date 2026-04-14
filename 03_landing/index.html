@@ -502,7 +502,7 @@
 <body>
     <header class="landing-header">
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <a href="/" class="landing-logo">RentOS</a>
+            <a href="/"><img src="img/logo.png" alt="RentOS" style="height: 38px; display: block;"></a>
             <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;">by NexOS</span>
         </div>
         <nav class="landing-nav">
@@ -524,7 +524,7 @@
             <div style="position: relative; z-index: 1;">
                 <span class="hero-badge" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">El Sistema Operativo para Gestores Reales</span>
                 <h1 style="color: #ffffff;">Tu negocio no debería depender de que mires <span style="color: var(--accent); text-shadow: 0 0 15px var(--accent-glow);">WhatsApp cada 5 minutos</span>.</h1>
-                <p style="color: #cbd5e1;">Tu PMS sirve para que entren reservas. RentOS sirve para que esas reservas no te secuestren el día. Frenamos el caos de WhatsApp y los problemas de coordinación de limpieza para que la operativa fluya sin que tengas que estar siempre conectado.</p>
+                <p style="color: #cbd5e1;">Tu PMS anota las reservas. RentOS evita que te secuestren el día. Controla la limpieza de fondo y filtra al huésped sin que tengas que mirar la pantalla.</p>
                 <div class="hero-actions">
                     <a href="#piloto" id="hero-pilot-btn" class="btn btn-primary">Quiero entrar al Piloto</a>
                     <a href="/demo/" id="hero-demo-btn" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.3);">Ver cómo funciona por dentro</a>
@@ -552,6 +552,18 @@
                         <h3>El embudo de tu propio tiempo</h3>
                         <p>No puedes meter un apartamento más porque ya no te da la vida para perseguir limpiadoras ni atender urgencias a medianoche. Has tocado techo manual.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE GLORIA -->
+        <section class="gloria-section">
+            <div class="gloria-avatar">Gl</div>
+            <div class="gloria-text">
+                <h2>Ignorar el WhatsApp empieza a ser rentable.</h2>
+                <p>GlorIA asume la comunicación operativa de choque. Absorbe de forma inteligente las dudas repetitivas de tus huéspedes (accesos, WiFi, averías...) para quitarte el peso del teléfono de encima. Menos urgencias falsas, más tranquilidad para liderar tu negocio.</p>
+                <div style="font-size: 1.1rem; font-weight: 600; color: var(--accent);">
+                    Tu tiempo es muy caro para ser el manual de instrucciones del apartamento.
                 </div>
             </div>
         </section>
@@ -613,15 +625,6 @@
             </div>
         </section>
 
-        <!-- BLOQUE GLORIA -->
-        <section class="gloria-section">
-            <div class="gloria-avatar">Gl</div>
-            <div class="gloria-text">
-                <h2>Tu primera línea de defensa para el huésped.</h2>
-                <p>Tu tiempo es demasiado caro para seguir explicando por WhatsApp en qué cajón de la cocina están las bolsas de basura. GlorIA asume las preguntas repetitivas y las dudas de acceso; <strong>y tú te centras directamente en hacer crecer el negocio.</strong></p>
-            </div>
-        </section>
-
         <!-- DEMO CENTRAL -->
         <section class="demo-cta-section" id="demo">
             <div class="demo-cta-container">
@@ -652,7 +655,7 @@
         </section>
 
         <!-- Cierre CTA -->
-        <section class="footer-cta">
+        <section class="footer-cta" id="piloto">
             <h2>¿Listo para subir de nivel y soltar el caos?</h2>
             <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">Únete a RentOS. El oxígeno que tu gestión diaria necesitaba desesperadamente.</p>
             <div class="hero-actions">
