@@ -499,6 +499,151 @@
         }
     
         /* ENHANCED PREMIUM STYLES */
+
+        /* GlorIA Phone Magic UI */
+        .gloria-section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            background: transparent !important;
+            border: none !important;
+        }
+        
+        .gloria-layout {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .gloria-brain-avatar {
+            width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 40px var(--accent-glow));
+            margin-bottom: 2rem;
+            animation: float-brain 6s ease-in-out infinite;
+        }
+
+        @keyframes float-brain {
+            0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 30px var(--accent-glow)); }
+            50% { transform: translateY(-15px) scale(1.05); filter: drop-shadow(0 0 60px rgba(138, 75, 222, 0.8)); }
+            100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 30px var(--accent-glow)); }
+        }
+
+        .gloria-magic-phone {
+            width: 340px;
+            height: 680px;
+            background: #020617;
+            border-radius: 45px;
+            border: 10px solid #1E293B;
+            box-shadow: 0 40px 100px rgba(138, 75, 222, 0.3), inset 0 0 20px rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+        }
+
+        .phone-header {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 1rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .phone-chat-area {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 100%;
+            height: calc(100% - 70px);
+            position: relative;
+        }
+
+        .phone-chat-area::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px; height: 250px;
+            background: rgba(138, 75, 222, 0.15);
+            filter: blur(50px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .chat-bubble {
+            padding: 1rem;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            max-width: 85%;
+            position: relative;
+            z-index: 1;
+            line-height: 1.4;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes slideUpFade {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bubble-guest {
+            background: #334155;
+            color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            animation-delay: 0.2s;
+        }
+
+        .bubble-clean {
+            background: #047857;
+            color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+            animation-delay: 1.8s;
+        }
+
+        .bubble-gloria {
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(138, 75, 222, 0.3);
+        }
+        
+        .bubble-gloria:nth-of-type(2) { animation-delay: 1s; }
+        .bubble-gloria:nth-of-type(4) { animation-delay: 2.6s; }
+
+        .chat-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        @media (max-width: 900px) {
+            .gloria-layout { flex-direction: column; text-align: center; }
+            .bubble-guest, .bubble-clean { align-self: flex-start; }
+            .bubble-gloria { align-self: flex-end; }
+        }
+
         /* Premium Background Grid */
         body::before {
             content: '';
@@ -664,7 +809,7 @@
         </div>
         <nav class="landing-nav">
             <a href="/login.html">Acceso Clientes</a>
-            <a href="#piloto" id="nav-demo-btn" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 1rem;">Quiero entrar al Piloto</a>
+            <a href="#piloto" id="nav-demo-btn" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 1rem;">Quiero probarlo GRATIS</a>
         </nav>
     </header>
 
@@ -683,7 +828,7 @@
                 <h1>Tu negocio no debería depender de que mires <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 5px 20px rgba(138, 75, 222, 0.2);">WhatsApp cada 5 minutos</span>.</h1>
                 <p>Tu PMS anota las reservas. RentOS evita que te secuestren el día. Controla la limpieza de fondo y filtra al huésped sin que tengas que mirar la pantalla constantemente.</p>
                 <div class="hero-actions">
-                    <a href="#piloto" id="hero-pilot-btn" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1.15rem; border-radius: 12px;">Quiero entrar al Piloto</a>
+                    <a href="#piloto" id="hero-pilot-btn" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1.15rem; border-radius: 12px;">Quiero probarlo GRATIS</a>
                     <a href="/demo/" id="hero-demo-btn" class="btn btn-secondary" style="padding: 1.1rem 2.5rem; font-size: 1.15rem; border-radius: 12px;">Ver funcionamiento</a>
                 </div>
             </div>
@@ -775,14 +920,50 @@
         </section>
 
         <!-- BLOQUE GLORIA -->
-        <section class="gloria-section" style="position: relative; background: var(--bg-light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-            <div class="bg-glow-orb" style="top: 20%; left: 10%; width: 400px; height: 400px; background: rgba(138, 75, 222, 0.05);"></div>
-            <div class="gloria-avatar">Gl</div>
-            <div class="gloria-text">
-                <h2>Ignorar el WhatsApp empieza a ser rentable.</h2>
-                <p>GlorIA asume la comunicación operativa de choque. Absorbe de forma inteligente las dudas repetitivas de tus huéspedes (accesos, WiFi, averías...) para quitarte el peso del teléfono de encima. Menos urgencias falsas, más tranquilidad para liderar tu negocio.</p>
-                <div style="font-size: 1.1rem; font-weight: 600; color: var(--accent);">
-                    Tu tiempo es muy caro para ser el manual de instrucciones del apartamento.
+        <section class="gloria-section">
+            <div class="bg-glow-orb" style="top: 20%; right: 10%; width: 500px; height: 500px; background: rgba(56, 26, 93, 0.15); z-index: -1;"></div>
+            
+            <div class="gloria-layout">
+                <!-- Columna Texto y Cerebro -->
+                <div class="gloria-text" style="flex: 1;">
+                    <img src="img/cerebro-gloria.png" class="gloria-brain-avatar" alt="GlorIA Brain">
+                    <h2 style="font-size: 3.2rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Ignorar el WhatsApp empieza a ser responsable.</h2>
+                    <p style="font-size: 1.35rem; color: var(--text-muted); margin-bottom: 2rem;">GlorIA asume la comunicación operativa de choque. Absorbe de forma inteligente las dudas repetitivas de tus huéspedes (accesos, WiFi, averías) y coordina alertas con el equipo de limpieza, quitándote el peso del teléfono de encima.</p>
+                    <div style="font-size: 1.15rem; font-weight: 600; color: var(--accent); padding-left: 1.5rem; border-left: 4px solid var(--accent);">
+                        "Tu tiempo es muy caro para ser el manual de instrucciones del apartamento."
+                    </div>
+                </div>
+
+                <!-- Columna Móvil Mágico -->
+                <div class="gloria-magic-phone">
+                    <div class="phone-header">
+                        <span style="color: var(--accent);">✦</span> Inbox Operativo
+                    </div>
+                    <div class="phone-chat-area">
+                        <!-- Mensaje Huésped -->
+                        <div class="chat-bubble bubble-guest">
+                            <div class="chat-label">👤 Huésped Apt. 3</div>
+                            Hola, acabo de llegar, ¿cómo puedo abrir la caja de llaves de fuera? 
+                        </div>
+                        
+                        <!-- Respuesta GlorIA -->
+                        <div class="chat-bubble bubble-gloria">
+                            <div class="chat-label"><span style="color: #fff;">✦</span> GlorIA (Auto)</div>
+                            ¡Hola Carlos! Tienes que girar el cajetín e introducir el código 4492. Aquí tienes un pequeño vídeo de cómo se hace: 🔗[Ver_Guía]
+                        </div>
+
+                        <!-- Mensaje Limpieza -->
+                        <div class="chat-bubble bubble-clean">
+                            <div class="chat-label">🧹 Limpieza</div>
+                            Piso 4 preparado para mañana. Faltan toallas limpias grandes.
+                        </div>
+
+                        <!-- Respuesta GlorIA a Limpieza -->
+                        <div class="chat-bubble bubble-gloria">
+                            <div class="chat-label"><span style="color: #fff;">✦</span> GlorIA (Operativa)</div>
+                            Registrado. Tarea de toallas añadida a lavandería y Gestor notificado en dashboard.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -844,7 +1025,7 @@
             <div class="demo-cta-container">
                 <h2>Siente el peso que te quitas de encima</h2>
                 <p>Las promesas de software sobran. Entra a la demo interactiva y comprueba en primera persona cómo RentOS despliega la operativa real que echabas en falta.</p>
-                <a href="#piloto" id="mid-demo-btn" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1.25rem 2.5rem; color: var(--bg-dark); border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Acceder al Programa Piloto</a>
+                <a href="#piloto" id="mid-demo-btn" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1.25rem 2.5rem; color: var(--bg-dark); border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Quiero probarlo GRATIS</a>
             </div>
         </section>
 
@@ -873,7 +1054,7 @@
             <h2>¿Listo para subir de nivel y soltar el caos?</h2>
             <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">Únete a RentOS. El oxígeno que tu gestión diaria necesitaba desesperadamente.</p>
             <div class="hero-actions">
-                <a href="#piloto" id="footer-pilot-btn" class="btn btn-primary">Quiero entrar al Piloto</a>
+                <a href="#piloto" id="footer-pilot-btn" class="btn btn-primary">Quiero probarlo GRATIS</a>
                 <a href="/demo/" id="footer-demo-btn" class="btn btn-dark">Ver cómo funciona por dentro</a>
             </div>
         </section>
