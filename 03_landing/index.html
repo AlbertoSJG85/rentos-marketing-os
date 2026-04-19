@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentOS — El Sistema Operativo Definitivo para Alquileres Vacacionales</title>
+    <title><span class="brand-rent">Rent</span><span class="brand-os">OS</span> — El Sistema Operativo Definitivo para Alquileres Vacacionales</title>
     <meta name="description" content="RentOS erradica el caos operativo. Deja de ser esclavo de tu alquiler vacacional y recupera el control absoluto de tu tiempo.">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#4A2574">
@@ -292,7 +292,7 @@
             font-size: 0.95rem;
         }
 
-        /* Comparativa (RentOS vs Hacerlo a mano con PMS) */
+        /* Comparativa (<span class="brand-rent">Rent</span><span class="brand-os">OS</span> vs Hacerlo a mano con PMS) */
         .comparison-section {
             background: var(--bg-light);
             padding: 8rem 2rem;
@@ -919,6 +919,16 @@
             .side-caos { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         }
         
+    
+        .brand-rent { color: var(--primary); font-weight: 800; }
+        .brand-os { color: var(--accent); font-weight: 900; }
+        
+        /* Potenciar presencia del color OS en la landing */
+        .pain-header h2 span { color: var(--accent); }
+        .hero-badge { border-color: var(--accent) !important; background: rgba(38, 198, 176, 0.1) !important; color: var(--accent) !important; }
+        .btn-primary { background: var(--accent) !important; box-shadow: 0 10px 25px rgba(38, 198, 176, 0.3) !important; }
+        .gloria-text h2 { border-left: 5px solid var(--accent); padding-left: 1.5rem; }
+        
     </style>
 </head>
 <body>
@@ -947,10 +957,10 @@
             
             <div class="hero-content" style="flex: 1; position: relative; z-index: 2;">
                 <span class="hero-badge" style="background: rgba(138, 75, 222, 0.1); color: var(--accent); border: 1px solid rgba(138, 75, 222, 0.2);">EL SISTEMA OPERATIVO PREMIUM</span>
-                <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--bg-dark); letter-spacing: -0.04em;">RentOS viene a cambiar <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 5px 20px rgba(138, 75, 222, 0.2);">cómo se gestiona de verdad</span> la operativa del alquiler vacacional.</h1>
+                <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--bg-dark); letter-spacing: -0.04em;"><span class="brand-rent">Rent</span><span class="brand-os">OS</span> viene a cambiar <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 5px 20px rgba(138, 75, 222, 0.2);">cómo se gestiona de verdad</span> la operativa del alquiler vacacional.</h1>
                 <h2 style="font-size: 2rem; color: var(--text-main); margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em;">La operativa ya no tiene por qué depender de ti.</h2>
                 <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 100%; margin-left: 0;">
-                    RentOS ordena la operativa diaria para que dejes de perseguir limpiezas, avisos, cambios y conversaciones una por una, con mucho más control sobre lo que pasa cada día.<br><br>
+                    <span class="brand-rent">Rent</span><span class="brand-os">OS</span> ordena la operativa diaria para que dejes de perseguir limpiezas, avisos, cambios y conversaciones una por una, con mucho más control sobre lo que pasa cada día.<br><br>
                     Mete sistema donde más se nota: en la carga diaria que te roba tiempo, en la coordinación que desgasta y en el control que normalmente se pierde entre WhatsApp, tareas y cambios de última hora.
                 </p>
                 <div class="hero-actions" style="justify-content: flex-start;">
@@ -1016,7 +1026,7 @@
         <!-- MANIFIESTO BANNER -->
         <div style="background: linear-gradient(90deg, var(--bg-dark), var(--primary), var(--bg-dark)); padding: 1.5rem 0; text-align: center; border-top: 1px solid rgba(138, 75, 222, 0.3); border-bottom: 1px solid rgba(138, 75, 222, 0.3); overflow: hidden; position: relative;">
             <div style="color: white; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.25em; text-transform: uppercase; white-space: nowrap; opacity: 0.9;">
-                ✦ INGENIERÍA DE PAZ OPERATIVA PARA GESTORES ✦ NO ES UN PMS ✦ ES TU BARRERA DE DEFENSA ✦ DOMINA EL APARTAMENTO ✦
+                INGENIERÍA PARA REDUCIR CARGA OPERATIVA ✦ NO ES OTRO PMS ✦ ES CONTROL OPERATIVO REAL
             </div>
         </div>
 
@@ -1037,7 +1047,7 @@
                         <div class="ribbon-title" style="color: #CBD5E1;">WhatsApp infinito drenando tu tiempo.</div>
                     </div>
                     <div class="ribbon-side side-rentos">
-                        <span class="side-label" style="color: var(--accent);">Impacto de RentOS</span>
+                        <span class="side-label" style="color: var(--accent);">Impacto de <span class="brand-rent">Rent</span><span class="brand-os">OS</span></span>
                         <div class="ribbon-title" style="color: #fff;">Silencio operativo. <span style="color: var(--accent);">GlorIA</span> filtra el 90% de las dudas y solo te avisa si es crítico.</div>
                     </div>
                 </div>
@@ -1049,7 +1059,7 @@
                         <div class="ribbon-title" style="color: #CBD5E1;">Perseguir limpiezas y avisar de cambios a mano.</div>
                     </div>
                     <div class="ribbon-side side-rentos">
-                        <span class="side-label" style="color: var(--accent);">Impacto de RentOS</span>
+                        <span class="side-label" style="color: var(--accent);">Impacto de <span class="brand-rent">Rent</span><span class="brand-os">OS</span></span>
                         <div class="ribbon-title" style="color: #fff;">Orquestación automática. El equipo recibe su ruta en tiempo real, sin tu intervención.</div>
                     </div>
                 </div>
@@ -1061,7 +1071,7 @@
                         <div class="ribbon-title" style="color: #CBD5E1;">Tú eres el cuello de botella de tu negocio.</div>
                     </div>
                     <div class="ribbon-side side-rentos">
-                        <span class="side-label" style="color: var(--accent);">Impacto de RentOS</span>
+                        <span class="side-label" style="color: var(--accent);">Impacto de <span class="brand-rent">Rent</span><span class="brand-os">OS</span></span>
                         <div class="ribbon-title" style="color: #fff;">Control desde la barrera. El negocio escala porque el sistema ejecuta mientras tú diriges.</div>
                     </div>
                 </div>
@@ -1086,7 +1096,7 @@
                     <img src="img/cabecera-gloria.png" alt="GlorIA" style="width: 100%; max-width: none; height: auto; object-fit: contain; filter: drop-shadow(0 10px 40px rgba(138, 75, 222, 0.2)); display: block; transform: scale(1.18); transform-origin: left bottom; margin-left: -5rem; margin-bottom: -1.5rem; position: relative; z-index: 10;">
                     
                     <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.03em; color: var(--bg-dark); position: relative; z-index: 10;">
-                        GlorIA es el cerebro de RentOS.
+                        GlorIA es el cerebro de <span class="brand-rent">Rent</span><span class="brand-os">OS</span>.
                     </h2>
                     <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent); margin-bottom: 2.5rem; line-height: 1.3; position: relative; z-index: 10;">
                         La parte visible de un sistema que descarga trabajo real, mueve la operativa y hace que no todo tenga que pasar por ti.
@@ -1146,7 +1156,7 @@
                 <h2 style="font-size: 3rem; color: var(--bg-dark); letter-spacing: -0.03em; margin-bottom: 1rem;">Visión integral de tu negocio</h2>
                 
                 <p style="font-size: 1.35rem; color: var(--text-muted); max-width: 800px; line-height: 1.6; margin-bottom: 2rem;">
-                    RentOS no solo ordena la operativa. También te deja ver cómo va el negocio: <strong>ingresos del mes, ocupación, visión del año y documentación útil</strong> cuando la necesitas. Todo en el mismo sitio, para que no tengas una parte del negocio en la cabeza y otra repartida entre herramientas.
+                    <span class="brand-rent">Rent</span><span class="brand-os">OS</span> no solo ordena la operativa. También te deja ver cómo va el negocio: <strong>ingresos del mes, ocupación, visión del año y documentación útil</strong> cuando la necesitas. Todo en el mismo sitio, para que no tengas una parte del negocio en la cabeza y otra repartida entre herramientas.
                 </p>
 
                 <!-- Panel KPI Falso -->
@@ -1190,11 +1200,11 @@
                         </ul>
                     </div>
                     <div class="comp-col rentos">
-                        <h3 style="color: var(--accent);">Con la capa RentOS</h3>
+                        <h3 style="color: var(--accent);">Con la capa <span class="brand-rent">Rent</span><span class="brand-os">OS</span></h3>
                         <ul>
                             <li>Tu PMS te sigue dando las reservas intactas.</li>
-                            <li>RentOS coordina los pases de limpieza con la llegada real.</li>
-                            <li><strong>Se rompe un aire acondicionado; RentOS canaliza la incidencia y evita que te obligue a saltar de urgencia.</strong></li>
+                            <li><span class="brand-rent">Rent</span><span class="brand-os">OS</span> coordina los pases de limpieza con la llegada real.</li>
+                            <li><strong>Se rompe un aire acondicionado; <span class="brand-rent">Rent</span><span class="brand-os">OS</span> canaliza la incidencia y evita que te obligue a saltar de urgencia.</strong></li>
                             <li><strong>Trabajas para escalar tu negocio, no apagando pequeños fuegos diarios.</strong></li>
                         </ul>
                     </div>
@@ -1206,7 +1216,7 @@
         <section class="demo-cta-section" id="demo">
             <div class="demo-cta-container">
                 <h2>Siente el peso que te quitas de encima</h2>
-                <p>Las promesas de software sobran. Entra a la demo interactiva y comprueba en primera persona cómo RentOS despliega la operativa real que echabas en falta.</p>
+                <p>Las promesas de software sobran. Entra a la demo interactiva y comprueba en primera persona cómo <span class="brand-rent">Rent</span><span class="brand-os">OS</span> despliega la operativa real que echabas en falta.</p>
                 <a href="#piloto" id="mid-demo-btn" class="btn btn-secondary" style="font-size: 1.2rem; padding: 1.25rem 2.5rem; color: var(--bg-dark); border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Quiero probarlo GRATIS</a>
             </div>
         </section>
@@ -1217,7 +1227,7 @@
             
             <div class="faq-item">
                 <h4>¿Tengo que tirar mi actual PMS a la basura?</h4>
-                <p>En absoluto. RentOS encaja aunque ya uses PMS. Nosotros no competimos por pintarte de colores un calendario de Airbnb; entramos en la parte operativa diaria (limpieza, coordinación, GlorIA) donde tu software actual todavía te obliga a usar WhatsApp y memoria.</p>
+                <p>En absoluto. <span class="brand-rent">Rent</span><span class="brand-os">OS</span> encaja aunque ya uses PMS. Nosotros no competimos por pintarte de colores un calendario de Airbnb; entramos en la parte operativa diaria (limpieza, coordinación, GlorIA) donde tu software actual todavía te obliga a usar WhatsApp y memoria.</p>
             </div>
 
             <div class="faq-item">
@@ -1227,14 +1237,14 @@
 
             <div class="faq-item">
                 <h4>¿Realmente voy a poder soltar el móvil?</h4>
-                <p>Ese es nuestro úúnico objetivo comercial. RentOS no hace magias irreales, solo orquesta avisos, seguimientos y comunicación operativa para romper tu dependencia absoluta del minuto a minuto del negocio.</p>
+                <p>Ese es nuestro úúnico objetivo comercial. <span class="brand-rent">Rent</span><span class="brand-os">OS</span> no hace magias irreales, solo orquesta avisos, seguimientos y comunicación operativa para romper tu dependencia absoluta del minuto a minuto del negocio.</p>
             </div>
         </section>
 
         <!-- Cierre CTA -->
         <section class="footer-cta" id="piloto">
             <h2>¿Listo para subir de nivel y soltar el caos?</h2>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">ÚÚnete a RentOS. El oxígeno que tu gestión diaria necesitaba desesperadamente.</p>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem;">ÚÚnete a <span class="brand-rent">Rent</span><span class="brand-os">OS</span>. El oxígeno que tu gestión diaria necesitaba desesperadamente.</p>
             <div class="hero-actions">
                 <a href="#piloto" id="footer-pilot-btn" class="btn btn-primary">Quiero probarlo GRATIS</a>
                 <a href="/demo/" id="footer-demo-btn" class="btn btn-dark">Ver cómo funciona por dentro</a>
@@ -1243,7 +1253,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; RentOS, un sistema de NexOS. Ingeniería de Paz Operativa para Gestores.</p>
+        <p>&copy; <span class="brand-rent">Rent</span><span class="brand-os">OS</span>, un sistema de NexOS. Ingeniería de Paz Operativa para Gestores.</p>
     </footer>
 </body>
 </html>
