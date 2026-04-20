@@ -110,10 +110,16 @@
 
         /* Hero */
         .hero {
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-            max-width: 900px;
+            padding: 8rem 5%;
+            text-align: left;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5rem;
+            min-height: 80vh;
         }
 
         .hero-badge {
@@ -746,7 +752,7 @@
             gap: 4rem;
         }
         
-        .hero-watermark { position: fixed; top: 50%; left: 50%; width: 100vw; height: 100vh; background-image: url('img/logo-rentos.png'); background-size: 50%; background-repeat: no-repeat; background-position: center; opacity: 0.12; filter: grayscale(100%); z-index: 0; pointer-events: none; transform: translate(-50%, -50%); }
+        .hero-watermark { display: none; }
         
         .hero-content {
             flex: 1;
@@ -776,7 +782,7 @@
 
         /* Mockup Premium en Hero */
         .hero-visual {
-            flex: 1;
+            flex: 1.2;
             position: relative;
             z-index: 2;
         }
@@ -791,7 +797,7 @@
             border: 1px solid rgba(138, 75, 222, 0.2);
             box-shadow: 0 40px 100px -20px var(--accent-glow), 
                         inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-            transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
+            transform: none;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
@@ -947,62 +953,38 @@
 
     <main>
         <!-- HERO (Ambición Subida con Vídeo de Tensión) -->
+        
         <section class="hero">
-            <!-- Glow Orb Backgrounds -->
-            <div class="bg-glow-orb" style="top: -100px; left: -200px; width: 600px; height: 600px; background: rgba(138, 75, 222, 0.15);"></div>
-            <div class="bg-glow-orb" style="bottom: 100px; right: -100px; width: 500px; height: 500px; background: rgba(56, 26, 93, 0.1);"></div>
+            <!-- Glow background -->
+            <div class="bg-glow-orb" style="top: -100px; left: -200px; width: 600px; height: 600px; background: rgba(138, 75, 222, 0.1);"></div>
             
-            <!-- Watermark del Logo gigante oscuro -->
-            
-<div class="hero-watermark"></div>
-
-            
-            <div class="hero-content" style="flex: 1; position: relative; z-index: 2;">
-                <span class="hero-badge" style="background: rgba(138, 75, 222, 0.1); color: var(--accent); border: 1px solid rgba(138, 75, 222, 0.2);">EL SISTEMA OPERATIVO PREMIUM</span>
-                <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; color: var(--bg-dark); letter-spacing: -0.04em;"><span class="brand-rent">Rent</span><span class="brand-os">OS</span> viene a cambiar <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 5px 20px rgba(138, 75, 222, 0.2);">cómo se gestiona de verdad</span> la operativa del alquiler vacacional.</h1>
-                <h2 style="font-size: 2rem; color: var(--text-main); margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em;">La operativa ya no tiene por qué depender de ti.</h2>
-                <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 100%; margin-left: 0;">
-                    <span class="brand-rent">Rent</span><span class="brand-os">OS</span> ordena la operativa diaria para que dejes de perseguir limpiezas, avisos, cambios y conversaciones una por una, con mucho más control sobre lo que pasa cada día.<br><br>
-                    Mete sistema donde más se nota: en la carga diaria que te roba tiempo, en la coordinación que desgasta y en el control que normalmente se pierde entre WhatsApp, tareas y cambios de última hora.
+            <div class="hero-content">
+                <span class="hero-badge" style="background: rgba(138, 75, 222, 0.1); color: var(--accent); border: 1px solid rgba(138, 75, 222, 0.2); padding: 0.5rem 1rem; border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 2rem; display: inline-block;">EL SISTEMA OPERATIVO PREMIUM</span>
+                <h1 style="font-size: 3.8rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--bg-dark); letter-spacing: -0.04em; font-weight: 900;">
+                    <span class="brand-rent">Rent</span><span class="brand-os">OS</span> viene a cambiar <span style="background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 5px 15px rgba(138, 75, 222, 0.2));">cómo gestionas</span> tu operativa.
+                </h1>
+                <p style="font-size: 1.4rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.5;">
+                    Deja de perseguir incidencias y empieza a dominar tu negocio. <span class="brand-rent">Rent</span><span class="brand-os">OS</span> automatiza la coordinación, las limpiezas y la comunicación para que tú recuperes el control real.
                 </p>
-                <div class="hero-actions" style="justify-content: flex-start;">
-                    <a href="#piloto" id="hero-pilot-btn" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1.15rem; border-radius: 12px; box-shadow: 0 10px 30px var(--accent-glow);">Quiero probarlo GRATIS</a>
+                <div class="hero-actions">
+                    <a href="#piloto" class="btn btn-primary" style="padding: 1.2rem 3rem; font-size: 1.2rem; border-radius: 14px; box-shadow: 0 20px 40px var(--accent-glow);">Quiero probarlo GRATIS</a>
                 </div>
             </div>
             
-            <div class="hero-visual" style="perspective: 1200px;">
-                
-                <div class="hero-video-wrapper" style="position: relative; border-radius: 24px; padding: 6px; background: linear-gradient(135deg, rgba(138, 75, 222, 0.4), rgba(0, 209, 255, 0.2)); box-shadow: 0 50px 100px -20px rgba(138, 75, 222, 0.5); transform: rotateY(-8deg) rotateX(2deg); transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='rotateY(0deg) rotateX(0deg) scale(1.02)'" onmouseout="this.style.transform='rotateY(-8deg) rotateX(2deg) scale(1)'">
-                    <div style="background: #000; border-radius: 20px; overflow: hidden; line-height: 0;">
+            <div class="hero-visual">
+                <div style="position: relative; border-radius: 28px; background: #0f172a; padding: 10px; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="border-radius: 20px; overflow: hidden; position: relative; background: #000; aspect-ratio: 16/9;">
                         <video 
                             id="hero-video"
                             autoplay 
-                            muted 
                             loop 
                             playsinline 
-                            style="width: 100%; height: auto; display: block; filter: brightness(1.1);"
+                            controls
+                            style="width: 100%; height: 100%; object-fit: cover;"
                         >
                             <source src="video/Video_RentOS.mp4" type="video/mp4">
                             Tu navegador no soporta el tag de video.
                         </video>
-                    </div>
-                </div>
-                                <div>
-                                    <strong style="color: #0F172A; font-size: 1.1rem; display: block;">Equipo sincronizado en silencio</strong>
-                                    <span style="color: #64748B; font-size: 0.95rem;">La limpieza ya sabe qué hacer y a qué hora. Apartamento #204 listo para Check-in.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Row 3: GlorIA chat heads -->
-                        <div style="background: white; border: 1px solid #E2E8F0; border-radius: 16px; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <div style="width: 32px; height: 32px; background: var(--primary); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">Gl</div>
-                                <div style="font-size: 0.9rem; font-weight: 600; color: #334155;">GlorIA respondió a 3 dudas operativas</div>
-                            </div>
-                            <div style="font-size: 0.8rem; background: #E0E7FF; color: #4338CA; padding: 0.2rem 0.6rem; border-radius: 50px; font-weight: 700;">Zero Fricción</div>
-                        </div>
-
                     </div>
                 </div>
             </div>
